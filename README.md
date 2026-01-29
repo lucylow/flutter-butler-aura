@@ -262,22 +262,6 @@ flutter build web
 
 Serve the `build/web` output with any static host. Use the same `--dart-define=AURA_BACKEND_URL=...` (and optional `AURA_BACKEND_TOKEN`) when building if you use the goal API.
 
----
-
-## Demo Video & Submission
-
-For hackathon submission, include:
-
-- A **demo video** (e.g. up to 3 minutes) showing: chat, dashboard, routines, and (if applicable) Serverpod connection.
-- A **project description** (this README summarizes the Flutter + Serverpod architecture and features).
-- A **link to this repository** (public or with read access for judges as per hackathon rules).
-
----
-
-## License
-
-See repository license file.
-
 
 
 
@@ -645,12 +629,3 @@ MIT — see the `LICENSE` file for full terms.
 ## Contact / Questions
 
 For hackathon-related questions or access for judges, provide read access to the emails listed in the hackathon instructions or open an issue and tag `@lucylow`.
-
----
-
-> If you want I can:
->
-> * Convert this README into an actual `README.md` commit on the `main` branch and open a PR; or
-> * Split the Serverpod instructions into a dedicated `SERVERPOD_INTEGRATION.md` and add a quickstart script; or
-> * Generate a short one-slide PDF or PNG summarizing the demo checklist for Devpost.
-
