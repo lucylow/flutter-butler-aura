@@ -24,6 +24,17 @@ The codebase demonstrates a practical, production-minded Flutter app with modula
 * Reconnection and error handling for networked backends.
 
 
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **UI** | Flutter — responsive layout, light/dark theme, shared components (app bar, bottom nav, glass containers) |
+| **State** | Riverpod — auth, chat, routines, devices, theme, Serverpod client |
+| **Backend** | Serverpod — client with connection state, reconnection, and generated RPC endpoints |
+| **Routing** | GoRouter — declarative routes (landing, dashboard, chat, devices, routines, settings) |
+| **AI** | Multi-AI service — single API over OpenAI, Anthropic, Gemini with fallback |
 
 
 ---
@@ -51,6 +62,17 @@ sequenceDiagram
     Server-->>Client: response
     Client-->>UI: data
 ```
+
+---
+
+## What It Does
+
+- **Goal-oriented chat** — Send goals to an optional backend (`AURA_BACKEND_URL` or **Serverpod** via `SERVERPOD_URL`; see `lib/core/network/SERVERPOD_AURA_API.md`) or use local AI (OpenAI/Anthropic/Gemini) or demo .
+- **Smart home dashboard** — Devices, routines, and status at a glance.
+- **Routines** — One-tap actions (e.g. “Lock all doors”, “Dim lights”, “Set thermostat to 68°F”).
+- **Devices** — Browse and manage connected devices (Serverpod or your backend).
+- **Serverpod-ready** — Backend wired with Riverpod providers, connection state, retry logic, and graceful degradation when Serverpod isn’t configured.
+
 
 ---
 
@@ -89,28 +111,6 @@ flowchart LR
     DevicesRepo --> Serverpod
     RoutinesRepo --> Serverpod
 ```
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **UI** | Flutter — responsive layout, light/dark theme, shared components (app bar, bottom nav, glass containers) |
-| **State** | Riverpod — auth, chat, routines, devices, theme, Serverpod client |
-| **Backend** | Serverpod — client with connection state, reconnection, and generated RPC endpoints |
-| **Routing** | GoRouter — declarative routes (landing, dashboard, chat, devices, routines, settings) |
-| **AI** | Multi-AI service — single API over OpenAI, Anthropic, Gemini with fallback |
-
----
-
-## What It Does
-
-- **Goal-oriented chat** — Send goals to an optional backend (`AURA_BACKEND_URL` or **Serverpod** via `SERVERPOD_URL`; see `lib/core/network/SERVERPOD_AURA_API.md`) or use local AI (OpenAI/Anthropic/Gemini) or demo .
-- **Smart home dashboard** — Devices, routines, and status at a glance.
-- **Routines** — One-tap actions (e.g. “Lock all doors”, “Dim lights”, “Set thermostat to 68°F”).
-- **Devices** — Browse and manage connected devices (Serverpod or your backend).
-- **Serverpod-ready** — Backend wired with Riverpod providers, connection state, retry logic, and graceful degradation when Serverpod isn’t configured.
 
 ---
 
