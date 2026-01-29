@@ -25,39 +25,6 @@ The codebase demonstrates a practical, production-minded Flutter app with modula
 
 
 
----
-
-## Architecture Overview
-
-```mermaid
-flowchart TB
-    subgraph Client["Flutter Client (Web / Windows)"]
-        UI[Flutter UI]
-        Riverpod[Riverpod State]
-        Router[GoRouter]
-        UI --> Riverpod
-        Riverpod --> Router
-    end
-
-    subgraph Core["Core Layer"]
-        ServerpodClient[Serverpod Client]
-        AIService[Multi-AI Service]
-        HTTP[HTTP Client]
-        ServerpodClient --> Riverpod
-        AIService --> Riverpod
-        HTTP --> Riverpod
-    end
-
-    subgraph Backend["Backend (Optional)"]
-        Serverpod[Serverpod Server]
-        GoalAPI[Goal API]
-        Serverpod --> ServerpodClient
-        GoalAPI --> HTTP
-    end
-
-    Client --> Core
-    Core --> Backend
-```
 
 ---
 
@@ -297,6 +264,41 @@ This blend of practical engineering and flexible demoability is the innovation: 
 ---
 
 ## Architecture & Design (high-level)
+
+
+## Architecture Overview
+
+```mermaid
+flowchart TB
+    subgraph Client["Flutter Client (Web / Windows)"]
+        UI[Flutter UI]
+        Riverpod[Riverpod State]
+        Router[GoRouter]
+        UI --> Riverpod
+        Riverpod --> Router
+    end
+
+    subgraph Core["Core Layer"]
+        ServerpodClient[Serverpod Client]
+        AIService[Multi-AI Service]
+        HTTP[HTTP Client]
+        ServerpodClient --> Riverpod
+        AIService --> Riverpod
+        HTTP --> Riverpod
+    end
+
+    subgraph Backend["Backend (Optional)"]
+        Serverpod[Serverpod Server]
+        GoalAPI[Goal API]
+        Serverpod --> ServerpodClient
+        GoalAPI --> HTTP
+    end
+
+    Client --> Core
+    Core --> Backend
+```
+
+
 
 * **Presentation**: Flutter + GoRouter, componentized widgets, responsive layout for desktop/web.
 * **State**: Riverpod for scoped providers and async state management.
