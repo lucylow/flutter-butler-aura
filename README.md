@@ -1,6 +1,6 @@
 # A.U.R.A. — Flutter + Serverpod Smart Home
 
-**A.U.R.A. — a goal-oriented smart home app built with **Flutter** (web & desktop) and **Serverpod** for backend integration.
+A.U.R.A. — a goal-oriented smart home app built with **Flutter** (web & desktop) and **Serverpod** for backend integration.
 
 Express goals in natural language (e.g. “Set up for movie night”, “I’m cold”), and A.U.R.A. orchestrates devices. The app runs in Chrome or as a desktop client, with optional AI providers and a Serverpod backend for full functionality.
 
