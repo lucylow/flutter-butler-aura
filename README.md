@@ -13,10 +13,10 @@ The codebase demonstrates a practical, production-minded Flutter app with modula
 ## Key Features
 
 * Natural-language goal input with intent routing (local AI / external Goal API / Serverpod RPC).
-* Device discovery and state simulation (mock devices included for offline demos).
+* Device discovery and state simulation ( devices included for offline demos).
 * Routine editor & one-tap routine execution.
 * Persistent device & routine state (when Serverpod backend is configured).
-* Multi-AI provider wrapper with fallback & mock modes for reliable demos.
+* Multi-AI provider wrapper with fallback &  modes for reliable demos.
 * Clean, responsive UI built for web & desktop targets.
 * Reconnection and error handling for networked backends.
 
@@ -136,7 +136,7 @@ flowchart LR
 
 ## What It Does
 
-- **Goal-oriented chat** — Send goals to an optional backend (`AURA_BACKEND_URL` or **Serverpod** via `SERVERPOD_URL`; see `lib/core/network/SERVERPOD_AURA_API.md`) or use local AI (OpenAI/Anthropic/Gemini) or demo mock.
+- **Goal-oriented chat** — Send goals to an optional backend (`AURA_BACKEND_URL` or **Serverpod** via `SERVERPOD_URL`; see `lib/core/network/SERVERPOD_AURA_API.md`) or use local AI (OpenAI/Anthropic/Gemini) or demo .
 - **Smart home dashboard** — Devices, routines, and status at a glance.
 - **Routines** — One-tap actions (e.g. “Lock all doors”, “Dim lights”, “Set thermostat to 68°F”).
 - **Devices** — Browse and manage connected devices (Serverpod or your backend).
@@ -190,7 +190,7 @@ Serverpod integration details: see **`lib/core/network/SERVERPOD_INTEGRATION.md`
 - **Flutter SDK** (>=3.2.0)
 - **Dart** 3.2+
 - **(Optional)** Serverpod server project and generated client for full backend features
-- **(Optional)** At least one AI API key (OpenAI, Anthropic, or Gemini) for live chat; otherwise demo/mock mode
+- **(Optional)** At least one AI API key (OpenAI, Anthropic, or Gemini) for live chat; otherwise demo/ mode
 
 ---
 
@@ -216,7 +216,7 @@ Or on Windows PowerShell:
 .\run_chrome.ps1
 ```
 
-The app runs without any keys. Chat uses **mock responses** until you set `AURA_BACKEND_URL` or add an AI API key.
+The app runs without any keys. Chat uses ** responses** until you set `AURA_BACKEND_URL` or add an AI API key.
 
 ### 3. (Optional) AI providers
 
@@ -305,7 +305,7 @@ This README is written for a hackathon audience: it explains architecture, techn
    * The core abstraction is a *Goal* (a structured representation of what the user wants), not a sequence of chat messages. This enables automated composition of routines and safe execution planning.
 2. **Hybrid execution model**
 
-   * Goals can be resolved locally (mocked), forwarded to an external Goal API, or executed through typed Serverpod RPCs. This hybrid model enables reproducible hackathon demos and realistic server-driven execution.
+   * Goals can be resolved locally (ed), forwarded to an external Goal API, or executed through typed Serverpod RPCs. This hybrid model enables reproducible hackathon demos and realistic server-driven execution.
 3. **Type-safe backend integration**
 
    * When configured with Serverpod, the app uses generated Dart bindings so the client-server contract is strongly typed — reducing runtime parsing errors and enabling safer state persistence.
@@ -314,7 +314,7 @@ This README is written for a hackathon audience: it explains architecture, techn
    * The AI layer is encapsulated behind a provider-agnostic service so you can swap OpenAI, Anthropic, Gemini, or internal models without rewriting business logic.
 5. **Hack-friendly demo fallback**
 
-   * Built-in mock mode and device simulators allow judges to experience the full feature set even when external API keys or hosted servers are unavailable.
+   * Built-in  mode and device simulators allow judges to experience the full feature set even when external API keys or hosted servers are unavailable.
 
 This blend of practical engineering and flexible demoability is the innovation: real-world design decisions made to maximize technical correctness, reliability, and judge-friendly reproducibility.
 
@@ -386,7 +386,7 @@ sequenceDiagram
   alt Serverpod enabled
     EX->>SP: Send typed RPCs (runRoutine, setDeviceState)
     SP-->>EX: Ack & persist state
-  else Mock mode
+  else  mode
     EX->>DS: Simulate device actions
     DS-->>EX: Simulated responses
   end
@@ -440,7 +440,7 @@ flowchart LR
 * **Riverpod** chosen for predictable dependency injection and testability over a heavier Redux-style setup.
 * **Serverpod** used for typed client/server bindings and fast Dart-first backend scaffolding; optional so hackathon participants can demo locally.
 * **Multi-AI provider wrapper** eases testing and reduces vendor lock-in but increases integration surface.
-* **Mock-first approach** ensures reliable demos (trade-off: some features require extra wiring when switching to production AI keys).
+* **-first approach** ensures reliable demos (trade-off: some features require extra wiring when switching to production AI keys).
 
 ---
 
@@ -452,7 +452,7 @@ flowchart LR
 * (Optional) Serverpod CLI and Docker if you want to run a local server
 * (Optional) API keys for AI providers (OpenAI / Anthropic / Gemini) if you want live AI
 
-**Clone & run (mock/demo)**
+**Clone & run (/demo)**
 
 ```bash
 git clone https://github.com/lucylow/flutter-butler-aura.git
@@ -461,7 +461,7 @@ flutter pub get
 flutter run -d chrome
 ```
 
-*This runs in mock mode by default (no external AI or Serverpod required).*
+*This runs in  mode by default (no external AI or Serverpod required).*
 
 **Run with local Serverpod**
 
@@ -497,7 +497,7 @@ The app accepts several `--dart-define` variables for runtime configuration. Con
 
 **Runtime modes**
 
-* `mock` — default, no external services required
+* `` — default, no external services required
 * `ai` — uses configured AI keys
 * `goal_api` — forwards goals to `AURA_BACKEND_URL`
 * `serverpod` — uses generated Serverpod bindings and RPCs
@@ -532,18 +532,18 @@ This repo is prepared for Serverpod integration for typed RPCs and persistence.
 
 ## AI integrations & fallback strategy
 
-A.U.R.A. supports multiple AI providers through an abstraction layer. The app intentionally includes a mock provider and a prioritized fallback strategy to keep demos stable.
+A.U.R.A. supports multiple AI providers through an abstraction layer. The app intentionally includes a  provider and a prioritized fallback strategy to keep demos stable.
 
 **Provider priority (default)**
 
 1. User-configured provider (OpenAI / Anthropic / Gemini)
 2. Goal API (if `AURA_BACKEND_URL` provided)
-3. Mock provider (fallback for demos)
+3.  provider (fallback for demos)
 
 **Developer tips**
 
 * Validate API keys and show clear UI nudges when keys are missing.
-* For reproducible demos, use the mock provider and note in the demo that it simulates the AI behavior.
+* For reproducible demos, use the  provider and note in the demo that it simulates the AI behavior.
 
 ---
 
@@ -567,7 +567,7 @@ This section maps features to the hackathon judging criteria so the judges see t
 
 * Explain the *goal-first* design and show a non-trivial automation composed from a single goal (e.g. "Movie night" that dims lights, sets scene, and starts a playlist).
 * Show how the system composes multiple actions automatically (Goal -> Plan -> Execute).
-* Demonstrate swapping the execution mode (mock -> Goal API -> Serverpod) to highlight hybrid flexibility.
+* Demonstrate swapping the execution mode ( -> Goal API -> Serverpod) to highlight hybrid flexibility.
 
 ### Technical Execution & User Experience — show this in demo
 
