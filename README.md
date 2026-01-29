@@ -1,8 +1,28 @@
 # A.U.R.A. — Flutter + Serverpod Smart Home
 
-A.U.R.A. — a goal-oriented smart home app built with **Flutter** (web & desktop) and **Serverpod** for backend integration.
+
+## Project Overview
+
+A.U.R.A. (Adaptive, Unified, Responsive Assistant) is a goal-oriented Flutter client that acts as a "Butler" for productivity and home automation tasks. Users express goals or requests in natural language (e.g. "Movie night", "Set up my morning routine", "Lower my thermostat") and A.U.R.A. orchestrates devices, schedules routines, and surfaces relevant UI and state to the user.
 
 Express goals in natural language (e.g. “Set up for movie night”, “I’m cold”), and A.U.R.A. orchestrates devices. The app runs in Chrome or as a desktop client, with optional AI providers and a Serverpod backend for full functionality.
+
+
+The codebase demonstrates a practical, production-minded Flutter app with modular layers, typed network bindings (Serverpod), Riverpod-based state management, and configurable AI integrations. The project intentionally supports both **mock/demo mode** and **production-like mode** with AI keys and Serverpod backend.
+
+---
+
+## Key Features
+
+* Natural-language goal input with intent routing (local AI / external Goal API / Serverpod RPC).
+* Device discovery and state simulation (mock devices included for offline demos).
+* Routine editor & one-tap routine execution.
+* Persistent device & routine state (when Serverpod backend is configured).
+* Multi-AI provider wrapper with fallback & mock modes for reliable demos.
+* Clean, responsive UI built for web & desktop targets.
+* Reconnection and error handling for networked backends.
+
+
 
 ---
 
@@ -291,26 +311,6 @@ This README is written for a hackathon audience: it explains architecture, techn
 * Screenshots / GIFs (placeholders)
 * Contributing
 * License
-
----
-
-## Project Overview
-
-A.U.R.A. (Adaptive, Unified, Responsive Assistant) is a goal-oriented Flutter client that acts as a "Butler" for productivity and home automation tasks. Users express goals or requests in natural language (e.g. "Movie night", "Set up my morning routine", "Lower my thermostat") and A.U.R.A. orchestrates devices, schedules routines, and surfaces relevant UI and state to the user.
-
-The codebase demonstrates a practical, production-minded Flutter app with modular layers, typed network bindings (Serverpod), Riverpod-based state management, and configurable AI integrations. The project intentionally supports both **mock/demo mode** and **production-like mode** with AI keys and Serverpod backend.
-
----
-
-## Key Features
-
-* Natural-language goal input with intent routing (local AI / external Goal API / Serverpod RPC).
-* Device discovery and state simulation (mock devices included for offline demos).
-* Routine editor & one-tap routine execution.
-* Persistent device & routine state (when Serverpod backend is configured).
-* Multi-AI provider wrapper with fallback & mock modes for reliable demos.
-* Clean, responsive UI built for web & desktop targets.
-* Reconnection and error handling for networked backends.
 
 ---
 
