@@ -1,5 +1,8 @@
 # A.U.R.A. (Adaptive, Unified, Responsive Assistant) — Flutter Serverpod Smart Home
 
+Your personal digital assistant built with Flutter on the front-end and Serverpod & AI services on the backend.
+
+
 
 ## Project Overview
 
@@ -269,34 +272,7 @@ Serve the `build/web` output with any static host. Use the same `--dart-define=A
 ============================================================
 
 
-# A.U.R.A. — Flutter Butler (Flutter + Serverpod)
-
-**Your personal digital assistant built with Flutter on the front-end and Serverpod & AI services on the backend.**
-
-This README is written for a hackathon audience: it explains architecture, technical implementation details, run instructions, testing, and — importantly — how to demo the project to align with judging criteria: **Innovation**, **Technical Execution & User Experience**, and **Impact**.
-
----
-
-## Table of contents
-
-* Project Overview
-* Key Features
-* What makes this innovative — (For Judges)
-* Architecture & Design
-* Technical choices & trade-offs
-* Setup & Quickstart
-* Environment variables & runtime modes
-* Serverpod integration (optional)
-* AI integrations & fallbacks
-* Testing & CI
-* Demo / Submission checklist (tailored to judging criteria)
-* Screenshots / GIFs (placeholders)
-* Contributing
-* License
-
----
-
-## What makes this innovative — (For Judges)
+## What makes this innovative
 
 > Short version: This is not just a chatbot — it is a *goal-oriented orchestrator* that maps user intent to executable automations and device flows.
 
