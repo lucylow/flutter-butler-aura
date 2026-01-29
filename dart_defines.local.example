@@ -1,0 +1,20 @@
+# Local env keys (Tuya Cloud, etc.) – DO NOT commit real values.
+# 1. Copy this file to dart_defines.local (gitignored).
+# 2. Fill in your keys in dart_defines.local.
+# 3. Run: .\run_local.ps1  (or use the args from dart_defines.local with flutter run)
+
+# Tuya Cloud (local version – instead of Supabase for device API)
+TUYA_ACCESS_ID=your_tuya_access_id_here
+TUYA_AUTH_KEY=your_tuya_auth_key_here
+
+# A.U.R.A. backend (Lovable / aura-smart-home-agent API) – for goal-oriented chat
+# AURA_BACKEND_URL=https://your-aura-api.example.com
+# AURA_BACKEND_TOKEN=
+
+# Serverpod – when set, app calls POST /aura/submitGoal and POST /routines/run (see SERVERPOD_AURA_API.md)
+# SERVERPOD_URL=http://localhost:8080/
+
+# Optional: other keys (AI, Supabase overrides, etc.)
+# OPENAI_API_KEY=
+# ANTHROPIC_API_KEY=
+# GEMINI_API_KEY=
