@@ -1,4 +1,4 @@
-# A.U.R.A. — Flutter + Serverpod Smart Home
+# A.U.R.A. (Adaptive, Unified, Responsive Assistant) — Flutter Serverpod Smart Home
 
 
 ## Project Overview
